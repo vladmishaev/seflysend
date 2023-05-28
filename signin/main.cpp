@@ -1,5 +1,4 @@
 #include <iostream>
-#include <regex>
 
 class Sign_in
 {
@@ -7,23 +6,39 @@ class Sign_in
         std::string nik_name;
         std::string password;
 
-        
-        bool verifyPassword(std::string password)
+        struct responceVerPass
         {
+            bool status;
+            std::string messageError;
+        };
+
+        
+        responceVerPass verifyPassword(std::string password)
+        {
+            responceVerPass responce;
+            
+
             if(password.size() < 4)
             {
-                return false;
+                responce.status = false;
+                responce.messageError = "Invalid number of characters, password must contain more than 4 symbols";
+                return responce;
             }
 
             for(int i = 0; i < password.size(); i++)
             {
                 if(password[i] == ' ')
                 {
-                    return false;
+                    responce.status = false;
+                    responce.messageError = "Password can't contain space";
+                    return responce;
                 }
             }
 
-            return true;
+            responce.status = true;
+            responce.messageError = " ";
+
+            return responce;
         }
 
         void getPossword()
@@ -32,9 +47,11 @@ class Sign_in
             std::cout << "Please enter your password" << std::endl;
             std::cin >> password;
 
+            responceVerPass r
+
             while(verifyPassword(password) == false)
             {
-                
+                std::cout << "Password can't contain space" << std::endl;               
             }
 
         }
@@ -58,7 +75,7 @@ class Sign_in
 
 int main()
 {
-    std::cout << "Please enter your nikname" << std::end;
+    std::cout << "Please enter your nikname" << std::endl;
     std::string NikName;
     std::cin >> NikName;
     std::string password;
