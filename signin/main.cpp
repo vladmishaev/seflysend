@@ -6,19 +6,20 @@ class Sign_in
         std::string nik_name;
         std::string password;
 
-        struct responceVerPass
+
+        struct responceVerify
         {
             bool status;
             std::string messageError;
         };
 
         
-        responceVerPass verifyPassword(std::string password)
+        responceVerify verifyPassword(std::string password)
         {
-            responceVerPass responce;
+            responceVerify responce;
             
 
-            if(password.size() < 4)
+            if(password.size() <= 4)
             {
                 responce.status = false;
                 responce.messageError = "Invalid number of characters, password must contain more than 4 symbols";
@@ -36,7 +37,7 @@ class Sign_in
             }
 
             responce.status = true;
-            responce.messageError = " ";
+            responce.messageError = "";
 
             return responce;
         }
@@ -45,29 +46,76 @@ class Sign_in
         {
             std::string password;
             std::cout << "Please enter your password" << std::endl;
-            std::cin >> password;
+            std::getline(std::cin, password);
 
-            responceVerPass r
+            responceVerify responce = verifyPassword(password);
 
-            while(verifyPassword(password) == false)
+            while(responce.status == false)
             {
-                std::cout << "Password can't contain space" << std::endl;               
+                std::cout << responce.messageError << std::endl;
+                getline(std::cin, password);
+                responce = verifyPassword(password);             
+            }
+            this->password = password;
+
+        }
+
+        responceVerify verifyNikName(std::string nikname)
+        {
+            responceVerify responce;
+            
+            if(nikname.size() <= 4)
+            {
+                responce.status = false;
+                responce.messageError = "Invalid number of characters, nikname must contain more than 4 symbols";
+                return responce;
             }
 
+            std::string invalidChar= "@#$%&,*()+=~`\"><?! ";
+
+            for(int i = 0; i < nikname.size(); i++)
+            {
+                for(int j = 0; j < invalidChar.size(); j++)
+                {
+                    if(nikname[i] == invalidChar[j])
+                    {
+                        responce.status = false;
+                        responce.messageError = "The nikname can't contain the folowing symbols (@ # $ % & , * ( ) + = ~ ` \" > < ? !) and space";
+                        return responce; 
+                    }
+                }
+            }
+
+            responce.status = true;
+            responce.messageError = "";
+
+
+            return responce;
         }
 
         void getNikName()
         {
+            std::string nikname;
             std::cout << "Please enter your nikname" << std::endl;
-            std::cin >> this->nik_name;
+            std::getline(std::cin, nikname);
 
+            responceVerify responce = verifyNikName(nikname);
+
+            while (responce.status == false) 
+            {
+                std::cout << responce.messageError << std::endl;
+                std::getline(std::cin, nikname);
+                responce = verifyNikName(nikname);
+            }
+
+            this->nik_name = nikname;
         }
     
     public:    
         Sign_in()
         {
-            getNikName();
-            getPossword();
+           getNikName();
+           getPossword();
 
         }
 
@@ -75,12 +123,7 @@ class Sign_in
 
 int main()
 {
-    std::cout << "Please enter your nikname" << std::endl;
-    std::string NikName;
-    std::cin >> NikName;
-    std::string password;
-    std::cin >> password;
-
+    Sign_in test;
 
     return 0;
 }
