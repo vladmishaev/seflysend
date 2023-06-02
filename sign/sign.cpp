@@ -1,9 +1,5 @@
 #include "sign.h"
 
-
-
-
-        
 Sign::responceVerify  Sign::verifyPassword(std::string password)
 {
     responceVerify responce;
@@ -102,10 +98,4 @@ void Sign::getNikName()
 }
 
     
-Sign::Sign()
-{
-   getNikName();
-   getPossword();
-
-}
 

@@ -3,25 +3,20 @@
 
 class Sign
 {
-    private:
+    protected:
         std::string nik_name;
         std::string password;
+                  
+        struct responceVerify
+        {
+            bool status;
+            std::string messageError;
+        };
 
-       struct responceVerify
-       {
-           bool status;
-           std::string messageError;
-       };
+        void getPossword();
+        void getNikName();
 
+    private:
        responceVerify verifyPassword(std::string password);
-
-       void getPossword();
-
        responceVerify verifyNikName(std::string nikname);
-       
-       void getNikName();
-    
-    public:    
-        Sign();
-
 };
