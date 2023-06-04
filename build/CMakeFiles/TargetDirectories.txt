@@ -1,0 +1,3 @@
+/home/vlad/Desktop/seflysend/build/CMakeFiles/seflysend.dir
+/home/vlad/Desktop/seflysend/build/CMakeFiles/edit_cache.dir
+/home/vlad/Desktop/seflysend/build/CMakeFiles/rebuild_cache.dir
