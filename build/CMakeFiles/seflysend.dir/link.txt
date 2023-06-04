@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/seflysend.dir/src/main.cpp.o CMakeFiles/seflysend.dir/src/login/sign/sign.cpp.o CMakeFiles/seflysend.dir/src/login/sign_in/signIn.cpp.o CMakeFiles/seflysend.dir/src/login/sign_up/signUp.cpp.o -o seflysend 
