@@ -1,12 +1,14 @@
 #pragma once
 #include <iostream>
+#include <string>
 
 class Sign
 {
     protected:
         std::string nik_name;
         std::string password;
-                  
+        static std::string messageTryAgain;
+
         struct responceVerify
         {
             bool status;

@@ -1,5 +1,7 @@
 #include "sign.h"
 
+std::string Sign::messageTryAgain = ". Please try again!";
+
 Sign::responceVerify  Sign::verifyPassword(std::string password)
 {
     responceVerify responce;
@@ -38,7 +40,7 @@ void Sign::getPossword()
 
     while(responce.status == false)
     {
-        std::cout << responce.messageError << std::endl;
+        std::cout << responce.messageError + messageTryAgain << std::endl;
         getline(std::cin, password);
         responce = verifyPassword(password);             
     }
@@ -89,7 +91,7 @@ void Sign::getNikName()
 
     while (responce.status == false) 
     {
-        std::cout << responce.messageError << std::endl;
+        std::cout << responce.messageError + messageTryAgain << std::endl;
         std::getline(std::cin, nikname);
         responce = verifyNikName(nikname);
     }

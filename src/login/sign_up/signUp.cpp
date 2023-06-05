@@ -1,5 +1,5 @@
-#include <iostream>
 #include "signUp.h"
+#include <iostream>
 #include <regex>
 #include <string>
 
@@ -39,17 +39,30 @@ void Sign_up::getEmail()
 {
     std::string email;
     std::cout << "Please enter your email" << std::endl;
-    std::cin >> email;
+    std::getline(std::cin,email);
 
     responceVerify responce = verifyMail(email);
     while(responce.status == false)
     {
-        std::cout << responce.messageError + ".Please try again!";
-        std::cin >> email;
+        std::cout << responce.messageError + messageTryAgain << std::endl;
+        std::getline(std::cin,email);
         responce = verifyMail(email);
     }
     this->Email = email;
 
+}
+
+void Sign_up::getCopyPassword()
+{
+    std::string copyPassword;
+    std::cout << "Please re-enter the new password" << std::endl;
+    std::getline(std::cin,copyPassword);
+    
+    while(copyPassword != this->password)
+    {
+        std::cout << "Password does not match," + messageTryAgain << std::endl;
+        std::getline(std::cin,copyPassword);
+    }    
 }
 
 void Sign_up::start()
@@ -57,5 +70,6 @@ void Sign_up::start()
     getEmail();
     getNikName();
     getPossword();
+    getCopyPassword();
 }
 
