@@ -3,6 +3,7 @@ import QtQuick.Window
 import Sign
 
 
+
 Window {
     width: 640
     height: 480
@@ -10,7 +11,7 @@ Window {
     title: qsTr("selfySend")
 
     SignIn{
-
+        anchors.fill: parent
     }
 
 

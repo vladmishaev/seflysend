@@ -4,7 +4,9 @@ set_target_properties(SignLib PROPERTIES AUTOMOC ON)
 target_link_libraries(SignLib PRIVATE Qt6::Quick)
 
 list(APPEND MODULE_QML_FILES
-    SignIn.qml)
+    SignIn.qml
+    Input/Input.qml)
+
 
 qt_add_qml_module(SignLib
     URI Sign
