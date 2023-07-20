@@ -1,2 +1,5 @@
 a.out
 build/
+
+# --------------- Gui QML--------------------------------------------|
+gui/theme.v0.1/build-scr-Desktop_Qt_6_3_2_GCC_64bit-Debug/
