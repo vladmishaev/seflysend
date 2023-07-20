@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Window
+import QtQuick.Controls 2.5
 import Sign
 
 
@@ -10,9 +11,30 @@ Window {
     visible: true
     title: qsTr("selfySend")
 
-    SignIn{
+    StackView {
+        id: _rootStackView
         anchors.fill: parent
+        initialItem: _signUpPage
+        focus: true
     }
+
+    SignIn{
+        id: _signInPage
+        visible: false
+        onGoToRegister:{
+            _rootStackView.pop()
+        }
+    }
+
+    SignUp{
+        id: _signUpPage
+        visible: false
+        onHaveAccounClick:{
+            _rootStackView.push(_signInPage)
+        }
+    }
+
+
 
 
 

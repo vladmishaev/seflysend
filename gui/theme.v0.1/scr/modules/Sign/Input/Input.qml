@@ -23,25 +23,38 @@ Rectangle{
         font.pixelSize: 25
 
         onFocusChanged: {
-            if(_inputEnt.focuse === true)
+            if(input.focus === true)
             {
-                animFSToSmall.start();
+                _hideText.start();
+            }else if(input.text === "")
+            {
+                _showText.start();
             }
         }
 
         Text{
             id: _textInput
-            anchors.left: parent.left
+            x:0
+            y:0
             font.pixelSize: 25
-            anchors.verticalCenter: parent.verticalCenter
 
         }
 
-        PropertyAnimation{
-            id: animSizFonToSmall
-            target: _textInput
-            properties: "font.pixelSize"
+        SequentialAnimation{
+            id: _hideText
 
+            NumberAnimation {target: _textInput; properties: "y"; to: -35; duration: 150}
+            NumberAnimation {target: _textInput; properties: "font.pixelSize"; to: 15; duration: 100}
+            NumberAnimation {target: _textInput; properties: "x"; to: -48; duration: 150}
         }
+
+        SequentialAnimation{
+            id: _showText
+
+            NumberAnimation {target: _textInput; properties: "y"; to: 0; duration: 100}
+            NumberAnimation {target: _textInput; properties: "x"; to: 0; duration: 100}
+            NumberAnimation {target: _textInput; properties: "font.pixelSize"; to: 25; duration: 100}
+        }
+
     }
 }
