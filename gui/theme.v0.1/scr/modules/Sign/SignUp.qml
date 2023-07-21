@@ -1,9 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Layouts 1.3
 
-
-import "Input"
-import "NextButton"
+import Components
 
 Item{
     id: _rootSignUp
