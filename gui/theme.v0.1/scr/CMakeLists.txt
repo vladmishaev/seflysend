@@ -18,6 +18,7 @@ qt_add_qml_module(appscr
     QML_FILES Main.qml
 )
 
+add_subdirectory(components)
 add_subdirectory(modules/Sign)
 
 
@@ -37,7 +38,7 @@ target_link_libraries(appscr
 )
 
 target_link_libraries(appscr
-    PRIVATE Qt6::Gui Qt6::Quick SignLibplugin)
+    PRIVATE Qt6::Gui Qt6::Quick ComponentsLibplugin SignLibplugin)
 
 install(TARGETS appscr
     BUNDLE DESTINATION .

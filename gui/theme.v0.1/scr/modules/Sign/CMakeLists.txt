@@ -6,8 +6,6 @@ target_link_libraries(SignLib PRIVATE Qt6::Quick)
 list(APPEND MODULE_QML_FILES
     SignIn.qml
     SignUp.qml
-    Input/Input.qml
-    NextButton/NextButton.qml
 )
 
 
