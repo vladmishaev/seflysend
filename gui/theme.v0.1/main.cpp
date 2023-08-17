@@ -1,9 +1,14 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
+
+#include "qml/modules/Sign/src/SendInputData/main.h"
 
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
+
+    qmlRegisterType<SendInputData>("SendInputData",1, 0, "SendInputData");
 
     QQmlApplicationEngine engine;
     engine.addImportPath(":/scythestudio.com/imports");
