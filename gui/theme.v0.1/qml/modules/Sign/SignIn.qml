@@ -3,6 +3,8 @@ import QtQuick.Layouts 1.3
 
 import Components
 
+import SendInputData 1.0
+
 Item{
     id: _rootSignIn
     signal goToRegister();
@@ -60,12 +62,22 @@ Item{
             }
 
         }
+        SendInputData{
+            id:_sent
+        }
 
         NextButton{
             Layout.minimumWidth: 150
             Layout.minimumHeight: 50
             Layout.alignment: Qt.AlignRight
             Layout.rightMargin: 30
+            MouseArea{
+                anchors.fill: parent
+                cursorShape: Qt.PointingHandCursor
+                onClicked: {
+                    _sent.send();
+                }
+            }
 
         }
 

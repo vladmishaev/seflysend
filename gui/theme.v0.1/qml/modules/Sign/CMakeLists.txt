@@ -8,12 +8,14 @@ list(APPEND MODULE_QML_FILES
     SignUp.qml
 )
 
-
 qt_add_qml_module(SignLib
     URI Sign
     VERSION 1.0
     RESOURCE_PREFIX /scythestudio.com/imports
     QML_FILES
         ${MODULE_QML_FILES}
+    SOURCES
+        src/SendInputData/main.h
+        src/SendInputData/main.cpp
 )
 

@@ -13,14 +13,12 @@ qt_add_executable(appscr
     qml.qrc
 )
 
+
 qt_add_qml_module(appscr
     URI main
     VERSION 1.0
     QML_FILES qml/Main.qml
 )
-
-add_subdirectory(qml/components)
-add_subdirectory(qml/modules/Sign)
 
 
 
@@ -33,6 +31,9 @@ set_target_properties(appscr PROPERTIES
 )
 
 
+
+add_subdirectory(qml/components)
+add_subdirectory(qml/modules/Sign)
 
 target_link_libraries(appscr
     PRIVATE Qt6::Quick
