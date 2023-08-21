@@ -2,10 +2,9 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.3
 
 import Components
-
 import SendInputData 1.0
-
 Item{
+
     id: _rootSignIn
     signal goToRegister();
 
@@ -62,8 +61,9 @@ Item{
             }
 
         }
+
         SendInputData{
-            id:_sent
+            id:_sendInpuSignIn
         }
 
         NextButton{
@@ -75,7 +75,7 @@ Item{
                 anchors.fill: parent
                 cursorShape: Qt.PointingHandCursor
                 onClicked: {
-                    _sent.send();
+                    _sendInpuSignIn.send();
                 }
             }
 

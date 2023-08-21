@@ -21,7 +21,6 @@ qt_add_qml_module(appscr
 )
 
 
-
 set_target_properties(appscr PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
@@ -30,17 +29,26 @@ set_target_properties(appscr PROPERTIES
     WIN32_EXECUTABLE TRUE
 )
 
+#Liners QML&Cpp
+add_subdirectory(qml/modules/src/LinkQmlCppAllMod)
+target_link_libraries(appscr PRIVATE
+    LinkQmlCppAllMod
+)
+#end
+
+
 
 
 add_subdirectory(qml/components)
 add_subdirectory(qml/modules/Sign)
 
+
 target_link_libraries(appscr
-    PRIVATE Qt6::Quick
+    PRIVATE Qt6::Quick Qt6::Gui
 )
 
 target_link_libraries(appscr
-    PRIVATE Qt6::Gui Qt6::Quick ComponentsLibplugin SignLibplugin)
+    PRIVATE  ComponentsLibplugin SignLibplugin)
 
 install(TARGETS appscr
     BUNDLE DESTINATION .
