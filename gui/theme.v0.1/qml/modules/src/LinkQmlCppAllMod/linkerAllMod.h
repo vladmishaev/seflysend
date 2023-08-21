@@ -1,0 +1,4 @@
+class LinkerQmlCppAllMod{
+public:
+    LinkerQmlCppAllMod();
+};

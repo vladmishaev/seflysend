@@ -11,7 +11,7 @@ list(APPEND MODULE_QML_FILES
 qt_add_qml_module(ComponentsLib
     URI Components
     VERSION 1.0
-    RESOURCE_PREFIX /scythestudio.com/imports
+    RESOURCE_PREFIX /selfysend.com/imports
     QML_FILES
         ${MODULE_QML_FILES}
 )
