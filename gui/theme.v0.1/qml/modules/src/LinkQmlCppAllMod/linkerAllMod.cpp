@@ -1,8 +1,8 @@
 #include "linkerAllMod.h"
 
-#include <linkerModSign.h>
+#include <linkCppQmlModSign.h>
 
 
 LinkerQmlCppAllMod::LinkerQmlCppAllMod(){
-    LinkerQmlCppModulSign();
+    LinkerCppQmlModulSign();
 }
