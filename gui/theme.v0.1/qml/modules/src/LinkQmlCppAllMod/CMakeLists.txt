@@ -6,7 +6,7 @@ qt_add_library(LinkQmlCppAllMod STATIC
 )
 
 
-add_subdirectory(../../Sign/src/LinkCppQml build)
+add_subdirectory(../../Sign/src build)
 
 target_link_libraries(LinkQmlCppAllMod PRIVATE LinkerModSign)
 target_include_directories(LinkQmlCppAllMod INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})

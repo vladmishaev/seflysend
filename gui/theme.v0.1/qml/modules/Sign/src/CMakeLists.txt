@@ -1,6 +1,8 @@
 qt_add_library(LinkerModSign STATIC
-    linkerModSign.cpp
-    ../SendInputData/main.cpp
+    linkCppQmlModSign.cpp
+    interfaceSign/interfaceSign.cpp
+    submitSignIn/submitSignIn.cpp
+    submitSignUp/submitSignUp.cpp
 )
 
 target_link_libraries(LinkerModSign PRIVATE Qt6::Quick)

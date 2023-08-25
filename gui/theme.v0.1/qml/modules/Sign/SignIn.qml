@@ -1,8 +1,8 @@
 import QtQuick 2.15
 import QtQuick.Layouts 1.3
-
+//Custem
 import Components
-import SendInputData 1.0
+import SubmitSignIn
 Item{
 
     id: _rootSignIn
@@ -62,10 +62,9 @@ Item{
 
         }
 
-        SendInputData{
+        SubmitSignIn{
             id:_sendInpuSignIn
         }
-
         NextButton{
             Layout.minimumWidth: 150
             Layout.minimumHeight: 50
