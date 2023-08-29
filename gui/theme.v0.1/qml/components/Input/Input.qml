@@ -26,6 +26,7 @@ Rectangle{
             if(input.focus === true)
             {
                 _hideText.start();
+
             }else if(input.text === "")
             {
                 _showText.start();
@@ -43,17 +44,23 @@ Rectangle{
         SequentialAnimation{
             id: _hideText
 
-            NumberAnimation {target: _textInput; properties: "y"; to: -35; duration: 150}
-            NumberAnimation {target: _textInput; properties: "font.pixelSize"; to: 15; duration: 100}
-            NumberAnimation {target: _textInput; properties: "x"; to: -48; duration: 150}
+            NumberAnimation {target: _textInput; properties: "y";
+                to: -35; duration: 150}
+            NumberAnimation {target: _textInput; properties: "font.pixelSize";
+                to: 15; duration: 100}
+            NumberAnimation {target: _textInput; properties: "x";
+                to: -48; duration: 150}
         }
 
         SequentialAnimation{
             id: _showText
 
-            NumberAnimation {target: _textInput; properties: "y"; to: 0; duration: 100}
-            NumberAnimation {target: _textInput; properties: "x"; to: 0; duration: 100}
-            NumberAnimation {target: _textInput; properties: "font.pixelSize"; to: 25; duration: 100}
+            NumberAnimation {target: _textInput; properties: "y";
+                to: 0; duration: 100}
+            NumberAnimation {target: _textInput; properties: "x";
+                to: 0; duration: 100}
+            NumberAnimation {target: _textInput; properties: "font.pixelSize";
+                to: 25; duration: 100}
         }
 
     }

@@ -64,7 +64,9 @@ Item{
 
         SubmitSignIn{
             id:_sendInpuSignIn
+
         }
+
         NextButton{
             Layout.minimumWidth: 150
             Layout.minimumHeight: 50

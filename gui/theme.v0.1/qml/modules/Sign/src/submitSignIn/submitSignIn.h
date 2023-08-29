@@ -1,6 +1,7 @@
 #ifndef SUBMITSIGNIN
 #define SUBMITSIGNIN
 
+
 #include "../interfaceSign/interfaceSign.h"
 
 class SubmitSignIn : public InterfaceSign
@@ -10,8 +11,7 @@ public:
     explicit SubmitSignIn(QObject *parent = nullptr);
 
 public slots:
-    void send();
-
+    void send(void);
 };
 
 #endif //SUBMITSIGNIN
