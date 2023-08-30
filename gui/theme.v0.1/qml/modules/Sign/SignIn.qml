@@ -1,8 +1,10 @@
 import QtQuick 2.15
 import QtQuick.Layouts 1.3
+
 //Custem
 import Components
 import SubmitSignIn
+
 Item{
 
     id: _rootSignIn
@@ -22,7 +24,8 @@ Item{
         }
 
         Input{
-            text_input.text: "Enter your login"
+            id: _loginInput
+            label: "Enter your login"
             Layout.fillWidth: true
             Layout.minimumHeight: 50
             Layout.leftMargin: 30
@@ -30,7 +33,8 @@ Item{
         }
 
         Input{
-            text_input.text: "Enter your password"
+            id: _passwordInput
+            label: "Enter your password"
             input.echoMode: TextInput.Password
             Layout.fillWidth: true
             Layout.minimumHeight: 50
@@ -62,11 +66,6 @@ Item{
 
         }
 
-        SubmitSignIn{
-            id:_sendInpuSignIn
-
-        }
-
         NextButton{
             Layout.minimumWidth: 150
             Layout.minimumHeight: 50
@@ -76,7 +75,6 @@ Item{
                 anchors.fill: parent
                 cursorShape: Qt.PointingHandCursor
                 onClicked: {
-                    _sendInpuSignIn.send();
                 }
             }
 

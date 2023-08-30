@@ -21,7 +21,7 @@ Item{
         }
 
         Input{
-            text_input.text: "Enter your mail"
+            label: "Enter your mail"
             Layout.fillWidth: true
             Layout.minimumHeight: 50
             Layout.leftMargin: 30
@@ -29,7 +29,7 @@ Item{
         }
 
         Input{
-            text_input.text: "Enter your login"
+            label: "Enter your login"
             Layout.fillWidth: true
             Layout.minimumHeight: 50
             Layout.leftMargin: 30
@@ -37,7 +37,7 @@ Item{
         }
 
         Input{
-            text_input.text: "Enter your password"
+            label: "Enter your password"
             input.echoMode: TextInput.Password
             Layout.fillWidth: true
             Layout.minimumHeight: 50
