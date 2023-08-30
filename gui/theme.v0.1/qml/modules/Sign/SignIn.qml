@@ -61,7 +61,7 @@ Item{
                     parent.color = "black";
                 }
                 onClicked: {
-                    _rootSignIn.goToRegister();
+                    goToRegister();
                 }
             }
 
@@ -69,8 +69,8 @@ Item{
 
         SubmitSignIn{
             id: _cppClassSubmitSignIn
-            login: _loginInput.input.text
-            password: _passwordInput.input.text
+            login: _loginInput.value
+            password: _passwordInput.value
         }
 
 
@@ -83,6 +83,7 @@ Item{
                 anchors.fill: parent
                 cursorShape: Qt.PointingHandCursor
                 onClicked: {
+                    _cppClassSubmitSignIn.send();
                 }
             }
 

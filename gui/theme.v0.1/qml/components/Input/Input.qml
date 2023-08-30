@@ -2,9 +2,10 @@ import QtQuick 2.15
 
 
 Rectangle{
-
+    readonly property alias value: _inputEnt.text
     property alias label: _textLabel.text
     property alias type: _inputEnt.echoMode
+
 
     border.color: "gray"
 
