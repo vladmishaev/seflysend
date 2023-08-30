@@ -3,15 +3,15 @@ import QtQuick 2.15
 
 Rectangle{
 
-    readonly property alias input: _inputEnt
     property alias label: _textLabel.text
+    property alias type: _inputEnt.echoMode
 
     border.color: "gray"
 
     MouseArea{
         anchors.fill: parent
         onClicked: {
-            input.focus = true;
+            _inputEnt.focus = true;
         }
     }
 

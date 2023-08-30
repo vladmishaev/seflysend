@@ -22,6 +22,7 @@ Item{
 
         Input{
             label: "Enter your mail"
+            type: TextInput.Normal
             Layout.fillWidth: true
             Layout.minimumHeight: 50
             Layout.leftMargin: 30
@@ -30,6 +31,7 @@ Item{
 
         Input{
             label: "Enter your login"
+            type: TextInput.Normal
             Layout.fillWidth: true
             Layout.minimumHeight: 50
             Layout.leftMargin: 30
@@ -38,7 +40,7 @@ Item{
 
         Input{
             label: "Enter your password"
-            input.echoMode: TextInput.Password
+            type: TextInput.Password
             Layout.fillWidth: true
             Layout.minimumHeight: 50
             Layout.leftMargin: 30

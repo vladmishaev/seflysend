@@ -26,6 +26,7 @@ Item{
         Input{
             id: _loginInput
             label: "Enter your login"
+            type: TextInput.Normal
             Layout.fillWidth: true
             Layout.minimumHeight: 50
             Layout.leftMargin: 30
@@ -35,7 +36,7 @@ Item{
         Input{
             id: _passwordInput
             label: "Enter your password"
-            input.echoMode: TextInput.Password
+            type: TextInput.Password
             Layout.fillWidth: true
             Layout.minimumHeight: 50
             Layout.leftMargin: 30
@@ -65,6 +66,13 @@ Item{
             }
 
         }
+
+        SubmitSignIn{
+            id: _cppClassSubmitSignIn
+            login: _loginInput.input.text
+            password: _passwordInput.input.text
+        }
+
 
         NextButton{
             Layout.minimumWidth: 150
