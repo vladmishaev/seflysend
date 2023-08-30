@@ -14,5 +14,7 @@ SubmitSignIn::SubmitSignIn(QObject *parent)
 
 void SubmitSignIn::send(void)
 {
+    qDebug() << m_login;
+    qDebug() << m_password;
     return;
 }

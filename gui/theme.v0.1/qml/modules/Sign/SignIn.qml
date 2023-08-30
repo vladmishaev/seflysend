@@ -1,8 +1,10 @@
 import QtQuick 2.15
 import QtQuick.Layouts 1.3
+
 //Custem
 import Components
 import SubmitSignIn
+
 Item{
 
     id: _rootSignIn
@@ -22,7 +24,9 @@ Item{
         }
 
         Input{
-            text_input.text: "Enter your login"
+            id: _loginInput
+            label: "Enter your login"
+            type: TextInput.Normal
             Layout.fillWidth: true
             Layout.minimumHeight: 50
             Layout.leftMargin: 30
@@ -30,8 +34,9 @@ Item{
         }
 
         Input{
-            text_input.text: "Enter your password"
-            input.echoMode: TextInput.Password
+            id: _passwordInput
+            label: "Enter your password"
+            type: TextInput.Password
             Layout.fillWidth: true
             Layout.minimumHeight: 50
             Layout.leftMargin: 30
@@ -56,16 +61,18 @@ Item{
                     parent.color = "black";
                 }
                 onClicked: {
-                    _rootSignIn.goToRegister();
+                    goToRegister();
                 }
             }
 
         }
 
         SubmitSignIn{
-            id:_sendInpuSignIn
-
+            id: _cppClassSubmitSignIn
+            login: _loginInput.value
+            password: _passwordInput.value
         }
+
 
         NextButton{
             Layout.minimumWidth: 150
@@ -76,7 +83,7 @@ Item{
                 anchors.fill: parent
                 cursorShape: Qt.PointingHandCursor
                 onClicked: {
-                    _sendInpuSignIn.send();
+                    _cppClassSubmitSignIn.send();
                 }
             }
 

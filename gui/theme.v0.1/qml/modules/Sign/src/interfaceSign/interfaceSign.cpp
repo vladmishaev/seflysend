@@ -15,7 +15,6 @@ void InterfaceSign::setLogin(QString newLogin)
         m_login = newLogin;
         emit loginChanged();
     }
-
     return;
 }
 
